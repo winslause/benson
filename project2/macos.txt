@@ -1,0 +1,210 @@
+How to Install Mac OS on PC
+Build your own Hackintosh
+By Jeremy Laukkonen  Updated on January 24, 2021   Reviewed by Jessica Kormos
+Tweet
+Share
+Email
+
+APPLE
+Macs
+iPad
+What to Know
+You need a fresh copy of macOS, a USB drive, free tools called UniBeast and MultiBeast, and compatible PC hardware.
+The steps below outline installing a macOS Catalina 10.15.6 on a PC and were tested using an Intel NUC DC3217IYE.
+You might need to change some configuration settings depending on the PC components you use.
+This article covers what you need to build a Hackintosh and why you would build one, how to create a bootable Hackintosh installation USB drive, and how to install it on a PC.
+
+How to Create a Bootable Hackintosh Installation USB Drive
+The first step in installing macOS on a PC and creating your own Hackintosh is to create a bootable USB with macOS on it. This requires a working Mac that has access to the Mac App Store, a USB thumb drive, and some time. It isn't difficult, but it is a little time consuming, and it's important to make sure that you get each step exactly right.
+
+Scroll to the bottom to see a full list of what you need to build a Hackintosh.
+
+Before you proceed, consider backing up your Mac just in case you run into any problems during the initial creation of the installation media.
+
+If you have your Mac and a USB thumb drive ready, then you can follow these instructions to make a bootable macOS USB:
+
+Using a Mac, open the Mac App Store.
+
+A screenshot of the App Store.
+Log in using your Apple ID if prompted.
+
+Search for and download the latest version of macOS.
+
+A screenshot of downloading Catalina.
+Restart your Mac, holding down Command + R as it starts back up. This will allow you to load into recovery mode.
+
+Release Command + R when you see the Apple icon and progress bar appear.
+
+Wait for macOS Recovery to load.
+
+macOS Utilities in macOS Recovery.
+Click Utilities > Terminal.
+
+A screenshot of selecting the terminal in macOS Utilities.
+With the terminal open, type csrutil disable and then press enter.
+
+A screenshot of disabling SIP in macOS Recovery.
+Wait for the terminal to display a message that SIP has been disabled.
+
+A screenshot of disabling SIP in macOS Recovery.
+Click the Apple menu > Restart.
+
+A screenshot of restarting out of macOS Recovery.
+Once your Mac has booted up, connect your USB drive.
+
+Open Disk Utility.
+
+macOS Disk Utility.
+Select your USB drive in the left column, then click Erase.
+
+A screenshot of Disk Utility on macOS.
+In the pop up menu, enter a name for your USB drive, select Mac OS Extended (Journaled), and click Erase.
+
+A screenshot of erasing a USB drive on macOS.
+Click Done.
+
+A screenshot of a formatted USB drive.
+Run the UniBeast app.
+
+If you didn't already download it earlier, download the latest version of UniBeast from the Tonymacx86 tools download section.
+
+Click Continue.
+
+A screenshot of UniBeast.
+Click Continue.
+
+A screenshot of UniBeast.
+Click Continue.
+
+A screenshot of UniBeast.
+Click Continue.
+
+A screenshot of UniBeast.
+Click Agree.
+
+A screenshot of UniBeast.
+Click the USB drive that you set up earlier, and then click Continue.
+
+A screenshot of UniBeast.
+Select Catalina, then click Continue.
+
+A screenshot of UniBeast.
+Select UEFI Boot Mode or Legacy Boot Mode, then click Continue.
+
+A screenshot of the bootloader configuration in UniBeast.
+UEFI Boot Mode is recommended for all systems that are capable of using UEFI. Only select Legacy Boot Mode if you have older hardware that can only use BIOS.
+
+If you are using an NVIDIA or ATI graphics card, make the appropriate selection and click Continue.
+
+A screenshot of UniBeast graphics options.
+Take a look at your selections, and click Continue if you didn't make any mistakes.
+
+A screenshot of UniBeast.
+Enter your password if prompted, and then click OK.
+
+A screenshot of UniBeast.
+UniBeast will now create your installation media. This process can take a while, so just leave it alone until it's done.
+
+How to Install macOS on a PC Using the Installation USB
+After you have successfully created your macOS installation USB, you will need to remove it from your Mac and plug it into the PC that you want to turn into a Hackintosh. This is a fairly long process that involves formatting the drive in your PC and performing a clean installation of macOS. If you don't want to format or erase your drive, you'll have to remove it and install a different one before you proceed.
+
+For this tutorial, an Intel NUC DC3217IYE was used as the PC base to create a Hackintosh, and the settings seen in screenshots pertain specifically to that hardware configuration. Make sure to select settings that are compatible with your hardware.
+
+Here's how to install macOS on your PC:
+
+From the Clover boot screen, select Boot macOS Install from Install macOS Catalina.
+
+Clover bootloader.
+If your PC is set to boot from USBs, you'll see this screen without needing to do anything. If it isn't, you'll have to press F8, F11, F12, or the appropriate key for your motherboard to choose your USB drive as the boot device.
+
+Select your desired Language, and click the forward arrow.
+
+Catalina installation language selection.
+Select Disk Utility from the macOS Utilities menu.
+
+The macOS Utilities menu.
+Click your PC hard drive in the left column.
+
+A screenshot of Disk Utility.
+Click Erase.
+
+A screenshot of the macOS install disk utility.
+Enter a new name for the drive, select APFS for the format, and click Erase.
+
+The macOS installation disk utility.
+Click Done.
+
+A screenshot of the macOS installer disk utility.
+Return to the main macOS Utilities menu, select Install macOS, and click Continue.
+
+A screenshot of macOS Utilities on macOS.
+Click Continue to proceed with the installation of macOS on your PC.
+
+The macOS Catalina install screen on a Hackintosh.
+When you complete the installation process, your PC will reboot. You may need to manually select macOS Catalina from the bootloader if it macOS doesn't load automatically.
+
+Finish Setting Up Your Hackintosh
+Your PC has macOS installed at this point, and it will probably work to one degree or another depending on the specific hardware that you used. You may find that some peripherals don't work quite right, the graphics aren't displayed correctly, or that there are other issues.
+
+Even if your new Hackintosh seems to work, the final step of installing macOS on a PC is to run the free MultiBeast tool from Tonymacx86. This app configures your macOS installation to work seamlessly with your PC hardware, so skipping this step is not advisable.
+
+Run the Multibeast app. From the Quick Start menu, select UEFI Boot Mode if your PC supports UEFI, or Legacy Boot Mode if it only supports BIOS.
+
+A screenshot of MultiBeast on a hackintosh.
+If you didn't already download it earlier, download the latest version of MultiBeast from the Tonymacx86 tools download section. This is a different app from UniBeast, but you can find it in the same location.
+
+Click Drivers, and select the audio drivers that are necessary for your hardware.
+
+A screenshot of the Drivers tab in MultiBeast.
+Click Misc, and select any necessary drivers.
+
+A screenshot of MultiBeast drivers.
+You may need to also select disk, network, or USB drivers depending on your hardware.
+
+Click Bootloaders, and select your desired bootloader.
+
+A screenshot of bootloader options in MultiBeast.
+Click Build, verify your settings, and click Save to save your Multibeast settings. If you have problems with these settings, you can load and alter them later to fine tune things.
+
+Saving MultiBeast settings.
+Click Install.
+
+A screenshot of MultiBeast.
+Click Agree.
+
+A screenshot of MultiBeast on a hackintosh.
+Enter your password if prompted, and click Install Helper.
+
+A screenshot of MultiBeast on a Hackintosh.
+When you see this screen, you can restart your Hackintosh. If it runs as expected, you're done. Otherwise you'll need to run MultiBeast again and make sure you have selected all the right drivers and settings for your individual PC hardware.
+
+A screenshot of MultiBeast ready to go.
+What You Need to Build a Hackintosh
+Building a Hackintosh is a multi-step process that isn't exceptionally difficult, but it is time-consuming, and it's also very precise. While you can technically build a Hackintosh without any specialized knowledge or experience, having a background in PC building and some knowledge of macOS helps.
+
+This is the hardware and software you need before you can build a Hackintosh:
+
+macOS compatible hardware: Obtain and assemble computer hardware that's compatible with macOS. If you aren't sure if your hardware will work, check sources like Tonymacx86.com, the OSx86 Project, Hacktintosh.com, and the Hackintosh subreddit.
+A working macOS computer: You need a working modern macOS computer with the App Store to download a fresh copy of macOS.
+A USB drive: A 16GB or 32GB drive is preferred.
+UniBeast and MultiBeast: These are free tools available from Tonymacx86.
+Why Make a Hackintosh?
+There are a lot of reasons to make a Hackintosh instead of just buying a Mac, but the primary factor is cost. You can build a Hackintosh with more powerful specifications than any Mac for less money. If you prefer macOS over other operating systems, but you want to save some money by putting together your own system, then building a Hackintosh is an attractive option.
+
+The downside is that Apple doesn't support this procedure, and they have even actively discouraged it. You won't be able to get tech support for macOS on your PC, and Apple may block services like Facetime and iMessage on your custom Hackintosh as well. If you're willing to risk it, then you stand to save some money and have a much greater level of control over your hardware choices than you would with an off the rack Mac.
+
+Components used to build a Hackintosh.
+Was this page helpful?
+
+
+
+
+
+
+
+
+
+More from Lifewire
+Windows 11 on a PC
+How to Install Windows 11
+Photography depicity MacBook Pro 2018, frontal view, dark background
