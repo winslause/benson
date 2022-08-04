@@ -1,0 +1,20 @@
+* {
+    margin: 5px;
+    padding: 5px;
+    background-image: url(images/6.jpg);
+}
+
+.create {
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.bnt {
+    border: 1px solid green;
+    background-color: rgb(255, 0, 0);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
